@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@500&family=Inter:wght@400;700&family=Jockey+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@500&family=Inter&family=Jockey+One&display=swap');
+
+:root{
+    --pink-button:#F582AE;
+    --bluetext:#001858;
+    --background-title:#88D3DD;
+    --background-page-button: #FEF6E4;
+    --fill-grey-cards:#d3d9f3;
+    --first-card-color:#B8C1EC;
+    --second-color:#ffffff;
+    --font-title:'jockey-one', sans-serif;
+    --font-content:'inter', sans-serif;
+}
+.title{
+    color: var(--bluetext);
+    text-align: center;
+    font-family: Jockey One;
+    font-size: 50px;
+}
+.favorites-button{
+    background-color: var(--pink-button);
+    border-color: var(--bluetext) solid;
+    padding: 0.3em 0.3em 0.4em;
+    border-radius: 8px;
+    border: 3px solid #172C66;
+    font-family: jockey one;
+    font-size: 18px;
+}
+@media (max-width: 767px) {
+    /* Estilos para dispositivos con ancho máximo de 767px (pantallas pequeñas) */
+    /* Por ejemplo, ajustar el tamaño del texto, márgenes, etc. */
+    body {
+    font-size: 14px;
+    }
