@@ -12,6 +12,10 @@
     --font-title:'jockey-one', sans-serif;
     --font-content:'inter', sans-serif;
 }
+*{
+    margin: 0;
+    padding: 0;
+}
 .title{
     color: var(--bluetext);
     text-align: center;
@@ -25,8 +29,18 @@
     border-radius: 8px;
     border: 3px solid #172C66;
     font-family: jockey one;
-    font-size: 18px;
+    font-size: 33px;
+    width: 207px;
+    height: 78px;
 }
+main{
+
+}
+.container{
+    background-color: var(--background-title);
+    width: 100%;
+}
+
 @media (max-width: 767px) {
     /* Estilos para dispositivos con ancho máximo de 767px (pantallas pequeñas) */
     /* Por ejemplo, ajustar el tamaño del texto, márgenes, etc. */
