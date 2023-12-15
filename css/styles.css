@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@500&family=Inter:wght@400;700&family=Jockey+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@500&family=Inter&family=Jockey+One&display=swap');
-
+@import url(./home.css);
 :root{
     --pink-button:#F582AE;
     --bluetext:#001858;
@@ -59,15 +59,15 @@
     text-align: center;
     word-wrap: break-word; /* Permite que las palabras se rompan si no caben en una línea */
 }
-  
-  .card-container {
+
+.card-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     width: 80%;
     margin: 0 auto;
-  }
+}
 
   /* Estilos para el contenedor de toda la tarjeta */
 .cards-section {
@@ -77,13 +77,3 @@
     justify-content: center;
     margin-top: 20px;
   }
-
-/* version móvil */
-
-@media (max-width: 767px) {
-    /* Estilos para dispositivos con ancho máximo de 767px (pantallas pequeñas) */
-    /* Por ejemplo, ajustar el tamaño del texto, márgenes, etc. */
-    body {
-    font-size: 14px;
-    }
-}
