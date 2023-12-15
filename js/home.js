@@ -18,19 +18,34 @@ document.addEventListener('DOMContentLoaded', async function () {
     const cardContainer = document.createElement('div');
     cardContainer.classList.add('card-container');
 
-    // Contenedor para la frase
+    // Contenedor para la frase y el icono de favoritos
     const quoteContainer = document.createElement('div');
     quoteContainer.classList.add('quote-container');
 
-    cardContainer.appendChild(quoteContainer);
+    // Contenedor para la frase obtenida de la API
+    const quoteContent = document.createElement('div');
+    quoteContent.classList.add('quote-content');
 
-    // Crear el contenedor del ícono de favoritos como botón
-    const favoritesContainer = document.createElement('div');
-    favoritesContainer.classList.add('favorites-container');
+    function adjustFontSize() {
+        const lineHeight = parseFloat(window.getComputedStyle(quoteContent).lineHeight);
+        const maxHeight = lineHeight * 12; // Altura máxima para 12 líneas
 
-    // Crear el ícono de favoritos
+        if (quoteContent.clientHeight > maxHeight) {
+            quoteContent.style.fontSize = '1em'; // Cambiar el tamaño de la fuente a 1em o el valor que desees
+        } else {
+            quoteContent.style.fontSize = '1.5em'; // Restablecer el tamaño de la fuente predeterminado
+        }
+    }
+
+    quoteContainer.appendChild(quoteContent);
+
+    // Crear un span para el ícono de favoritos
     const favoritesIcon = document.createElement('i');
     favoritesIcon.classList.add('fas', 'fa-heart'); // Ajusta las clases según tus necesidades
+
+    // Contenedor para el ícono de favoritos
+    const favoritesIconContainer = document.createElement('div');
+    favoritesIconContainer.classList.add('favorites-icon-container'); // Clase para el div contenedor
 
     // Establecer el ícono de favoritos como un botón
     favoritesIcon.addEventListener('click', function () {
@@ -38,11 +53,14 @@ document.addEventListener('DOMContentLoaded', async function () {
         console.log('Botón de favoritos clickeado');
     });
 
-    // Agregar el ícono de favoritos al contenedor de favoritos
-    favoritesContainer.appendChild(favoritesIcon);
+    // Agregar el ícono de favoritos al contenedor del ícono
+    favoritesIconContainer.appendChild(favoritesIcon);
 
-    // Agregar el contenedor de favoritos al contenedor de la tarjeta
-    cardContainer.appendChild(favoritesContainer);
+    // Agregar el contenedor del ícono al contenedor de la cita
+    quoteContainer.appendChild(favoritesIconContainer);
+
+    // Agregar el contenedor de la cita al contenedor de la tarjeta
+    cardContainer.appendChild(quoteContainer);
 
     cardsSection.appendChild(cardContainer);
 
@@ -52,11 +70,11 @@ document.addEventListener('DOMContentLoaded', async function () {
 
     const nextButton = document.createElement('button');
     nextButton.classList.add('next-button');
-    nextButton.textContent = 'NEXT';
+    nextButton.textContent = 'NEXT>';
 
     const favoritesButton = document.createElement('button');
     favoritesButton.classList.add('favorites-button');
-    favoritesButton.textContent = 'FAVORITES';
+    favoritesButton.textContent = 'FAVORITES>';
 
     buttonsSection.appendChild(nextButton);
     buttonsSection.appendChild(favoritesButton);
@@ -66,7 +84,7 @@ document.addEventListener('DOMContentLoaded', async function () {
     content.appendChild(cardsSection);
     content.appendChild(buttonsSection);
 
-    // URL de la API (reemplaza 'URL_DE_TU_API' por la dirección real de la API)
+    // llamada a la API
     const apiUrl = 'https://uselessfacts.jsph.pl/api/v2/facts/random';
 
     // Función para obtener la frase del día de la API
@@ -86,15 +104,17 @@ document.addEventListener('DOMContentLoaded', async function () {
         const quote = await fetchQuoteOfTheDay();
 
         if (quote) {
-            quoteContainer.textContent = quote;
+            quoteContent.textContent = quote;
         }
     }
 
     // Mostrar la frase del día cuando se cargue la página
     await displayQuoteOfTheDay();
+    adjustFontSize();
 
     // Función para cambiar la frase al hacer clic en el botón NEXT
     nextButton.addEventListener('click', async function () {
         await displayQuoteOfTheDay();
+        adjustFontSize();
     });
 });
