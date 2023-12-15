@@ -18,34 +18,11 @@ document.addEventListener('DOMContentLoaded', async function () {
     const cardContainer = document.createElement('div');
     cardContainer.classList.add('card-container');
 
-    // Contenedor para la flecha izquierda
-    const leftArrowContainer = document.createElement('div');
-    leftArrowContainer.classList.add('arrow-container');
-
-    const leftButton = document.createElement('button');
-    leftButton.classList.add('left-button');
-    leftButton.innerHTML = '&#9664;'; // Botón izquierdo (flecha hacia la izquierda)
-
-    leftArrowContainer.appendChild(leftButton);
-
     // Contenedor para la frase
     const quoteContainer = document.createElement('div');
     quoteContainer.classList.add('quote-container');
 
-    cardContainer.appendChild(leftArrowContainer);
     cardContainer.appendChild(quoteContainer);
-
-    // Contenedor para la flecha derecha
-    const rightArrowContainer = document.createElement('div');
-    rightArrowContainer.classList.add('arrow-container');
-
-    const rightButton = document.createElement('button');
-    rightButton.classList.add('right-button');
-    rightButton.innerHTML = '&#9654;'; // Botón derecho (flecha hacia la derecha)
-
-    rightArrowContainer.appendChild(rightButton);
-
-    cardContainer.appendChild(rightArrowContainer);
 
     cardsSection.appendChild(cardContainer);
 
@@ -90,20 +67,16 @@ document.addEventListener('DOMContentLoaded', async function () {
 
         if (quote) {
             quoteContainer.textContent = quote;
-
-            leftButton.addEventListener('click', async function () {
-                const newQuote = await fetchQuoteOfTheDay();
-                quoteContainer.textContent = newQuote;
-            });
-
-            rightButton.addEventListener('click', async function () {
-                const newQuote = await fetchQuoteOfTheDay();
-                quoteContainer.textContent = newQuote;
-            });
         }
     }
 
     // Mostrar la frase del día cuando se cargue la página
     await displayQuoteOfTheDay();
+
+    // Función para cambiar la frase al hacer clic en el botón NEXT
+    nextButton.addEventListener('click', async function () {
+        await displayQuoteOfTheDay();
+    });
 });
+
 
