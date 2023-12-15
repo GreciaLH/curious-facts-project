@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@500&family=Inter:wght@400;700&family=Jockey+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@500&family=Inter&family=Jockey+One&display=swap');
-
+@import url(./home.css);
 :root{
     --pink-button:#F582AE;
     --bluetext:#001858;
@@ -23,6 +23,17 @@
     font-size: 50px;
 }
 .favorites-button{
+    background-color: var(--background-page-button);
+    border-color: var(--bluetext) solid;
+    padding: 0.3em 0.3em 0.4em;
+    border-radius: 8px;
+    border: 3px solid #172C66;
+    font-family: jockey one;
+    font-size: 33px;
+    width: 207px;
+    height: 78px;
+}
+.next-button{
     background-color: var(--pink-button);
     border-color: var(--bluetext) solid;
     padding: 0.3em 0.3em 0.4em;
@@ -59,15 +70,15 @@
     text-align: center;
     word-wrap: break-word; /* Permite que las palabras se rompan si no caben en una línea */
 }
-  
-  .card-container {
+
+.card-container {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
     width: 80%;
     margin: 0 auto;
-  }
+}
 
   /* Estilos para el contenedor de toda la tarjeta */
 .cards-section {
@@ -77,13 +88,3 @@
     justify-content: center;
     margin-top: 20px;
   }
-
-/* version móvil */
-
-@media (max-width: 767px) {
-    /* Estilos para dispositivos con ancho máximo de 767px (pantallas pequeñas) */
-    /* Por ejemplo, ajustar el tamaño del texto, márgenes, etc. */
-    body {
-    font-size: 14px;
-    }
-}
