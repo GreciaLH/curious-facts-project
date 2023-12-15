@@ -13,7 +13,7 @@
     --font-content:'inter', sans-serif;
 }
 *{
-    margin: 0;
+    margin: 0; 
     padding: 0;
 }
 .title{
@@ -23,7 +23,7 @@
     font-size: 50px;
 }
 .favorites-button{
-    background-color: var(--pink-button);
+    background-color: var(--first-card-color);
     border-color: var(--bluetext) solid;
     padding: 0.3em 0.3em 0.4em;
     border-radius: 8px;
@@ -41,7 +41,7 @@
 
 /* Estilos para las tarjetas de frases */
 .quote-container {
-    background-color: #f8f8f8;
+    background-color:var(--first-card-color);
     border: 1px solid #ddd;
     padding: 20px;
     margin-bottom: 20px;
@@ -76,4 +76,4 @@
     align-items: center;
     justify-content: center;
     margin-top: 20px;
-  }
+}
