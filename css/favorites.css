@@ -1,18 +1,26 @@
-body, html {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-}
 #logo-favorites img {
     display: none;
-  }
-  .title{ 
-    background-color: #8BD3DD ;
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    padding:5%;
- 
-    
-  }
-   
+}
+
+#buttons-favorites {
+    width: 100%;
+    text-align: center; /* Centra el botón horizontalmente */
+}
+
+#buttons-favorites .Home {
+    background-color: #B8C1EC; /* Ajusta el color de fondo según tus preferencias */
+    border-color: #172C66 solid; /* Ajusta el color del borde según tus preferencias */
+    border-radius: 8px;
+    border: 3px solid #172C66;
+    font-family: 'jockey one', sans-serif; /* Ajusta la fuente según tus preferencias */
+    font-size: 15px;
+    padding: 1%;
+    width: 25%;
+    margin-top:15%;
+}
+
+.Favorite {
+    color: #001858;
+    font-size: 20px;
+    margin:5%;
+}
