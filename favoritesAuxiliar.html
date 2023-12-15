@@ -4,17 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
-    <link rel="stylesheet" href="./css/favorites.css">
-    <link rel="stylesheet" href="./css/styles.css">
 </head>
 <body>
-    <div class="container">
-        <h1 class="title" >CURIOUS <br>FACTS</h1>
-    </div>
-    <main id="content">
-        <!-- contenido añadido por js -->
+    <main>
+        <section id="section-logo">
+            <img src="./assets/img/little_owl.png" alt="owl">
+        </section>
+        <section id="cards-section">
+            <div class="cards-stack"></div>
+        </section>
+        <section id="buttons-section">
+            <button class="next-button">NEXT</button>
+            <button class="favorites-button">FAVORITES</button>
+        </section>
+
     </main>
+        <script src="./js/favorites.js" type="module"></script>
 </body>
 </html>
-
-<script src="./js/favorites.js" type="module"></script>

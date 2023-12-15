@@ -1,4 +1,6 @@
+
 document.addEventListener('DOMContentLoaded', async function () {
+    
     const content = document.getElementById('content');
 
     // Crear sección para el logo
@@ -65,6 +67,7 @@ document.addEventListener('DOMContentLoaded', async function () {
     cardsSection.appendChild(cardContainer);
 
     // Crear sección para los botones
+    
     const buttonsSection = document.createElement('section');
     buttonsSection.id = 'buttons-section';
 
@@ -78,6 +81,18 @@ document.addEventListener('DOMContentLoaded', async function () {
 
     buttonsSection.appendChild(nextButton);
     buttonsSection.appendChild(favoritesButton);
+    favoritesButton.addEventListener('click', function () {
+        // Eliminar el contenido existente de main
+        const mainElement = document.getElementById('content');
+        mainElement.innerHTML = '';
+    
+        // Crear un nuevo script para cargar y ejecutar favorites.js dinámicamente
+        const script = document.createElement('script');
+        script.src = './js/favorites.js';
+    
+        // Agregar el script al head
+        document.head.appendChild(script);
+    });
 
     // Agregar las secciones al main
     content.appendChild(logoSection);
@@ -117,4 +132,5 @@ document.addEventListener('DOMContentLoaded', async function () {
         await displayQuoteOfTheDay();
         adjustFontSize();
     });
+
 });
