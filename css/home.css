@@ -77,5 +77,8 @@
     background-color: #555;
   }
   
+  #asideFavorites {
+    display: none;;
+  }
  
 }
