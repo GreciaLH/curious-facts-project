@@ -24,6 +24,26 @@ document.addEventListener('DOMContentLoaded', async function () {
 
     cardContainer.appendChild(quoteContainer);
 
+    // Crear el contenedor del ícono de favoritos como botón
+    const favoritesContainer = document.createElement('div');
+    favoritesContainer.classList.add('favorites-container');
+
+    // Crear el ícono de favoritos
+    const favoritesIcon = document.createElement('i');
+    favoritesIcon.classList.add('fas', 'fa-heart'); // Ajusta las clases según tus necesidades
+
+    // Establecer el ícono de favoritos como un botón
+    favoritesIcon.addEventListener('click', function () {
+        // Aquí puedes agregar la lógica que desees para el botón de favoritos
+        console.log('Botón de favoritos clickeado');
+    });
+
+    // Agregar el ícono de favoritos al contenedor de favoritos
+    favoritesContainer.appendChild(favoritesIcon);
+
+    // Agregar el contenedor de favoritos al contenedor de la tarjeta
+    cardContainer.appendChild(favoritesContainer);
+
     cardsSection.appendChild(cardContainer);
 
     // Crear sección para los botones
@@ -78,5 +98,3 @@ document.addEventListener('DOMContentLoaded', async function () {
         await displayQuoteOfTheDay();
     });
 });
-
-
