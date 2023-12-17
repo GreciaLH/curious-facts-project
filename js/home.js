@@ -30,12 +30,12 @@ document.addEventListener('DOMContentLoaded', async function () {
 
     function adjustFontSize() {
         const lineHeight = parseFloat(window.getComputedStyle(quoteContent).lineHeight);
-        const maxHeight = lineHeight * 12; 
+        const maxHeight = lineHeight * 12; // Altura máxima para 12 líneas
 
         if (quoteContent.clientHeight > maxHeight) {
-            quoteContent.style.fontSize = '1em'; 
+            quoteContent.style.fontSize = '1em'; // Cambiar el tamaño de la fuente a 1em o el valor que desees
         } else {
-            quoteContent.style.fontSize = '1.5em'; 
+            quoteContent.style.fontSize = '1.5em'; // Restablecer el tamaño de la fuente predeterminado
         }
     }
 
@@ -43,16 +43,41 @@ document.addEventListener('DOMContentLoaded', async function () {
 
     // Crear un span para el ícono de favoritos
     const favoritesIcon = document.createElement('i');
-    favoritesIcon.classList.add('fas', 'fa-heart'); 
+    favoritesIcon.classList.add('fas', 'fa-heart'); // Ajusta las clases según tus necesidades
 
     // Contenedor para el ícono de favoritos
     const favoritesIconContainer = document.createElement('div');
-    favoritesIconContainer.classList.add('favorites-icon-container'); 
+    favoritesIconContainer.classList.add('favorites-icon-container'); // Clase para el div contenedor
 
     // Establecer el ícono de favoritos como un botón
     favoritesIcon.addEventListener('click', function () {
-        console.log('Botón de favoritos clickeado');
+        const fraseActual = quoteContent.textContent.trim();
+
+        if (fraseActual) {
+            // Obtener frases favoritas almacenadas en localStorage
+            let frasesFavoritas = JSON.parse(localStorage.getItem('frasesFavoritas')) || [];
+
+            // Verificar si la frase ya está en la lista de favoritos
+            if (!frasesFavoritas.includes(fraseActual)) {
+                // Si no está en la lista, agrégala
+                frasesFavoritas.push(fraseActual);
+
+                // Guardar las frases favoritas actualizadas en localStorage
+                localStorage.setItem('frasesFavoritas', JSON.stringify(frasesFavoritas));
+
+                // Actualizar el contenido de asideFavorites en favorite.js
+                const event = new Event('frasesFavoritasUpdated');
+                document.dispatchEvent(event);
+
+                console.log('Frase agregada a favoritos:', fraseActual);
+            } else {
+                console.log('La frase ya está en la lista de favoritos.');
+            }
+        } else {
+            console.error('No hay una frase para agregar a favoritos.');
+        }
     });
+
 
     // Agregar el ícono de favoritos al contenedor del ícono
     favoritesIconContainer.appendChild(favoritesIcon);
@@ -107,7 +132,7 @@ document.addEventListener('DOMContentLoaded', async function () {
             const response = await fetch(apiUrl);
             const data = await response.json();
 
-            return data.text; 
+            return data.text; // Devuelve la frase del día obtenida de la API
         } catch (error) {
             console.error('Error fetching data:', error);
         }
@@ -122,45 +147,10 @@ document.addEventListener('DOMContentLoaded', async function () {
         }
     }
 
-    // Mostrar la frase del día cuando se cargue la página
-    await displayQuoteOfTheDay();
-    adjustFontSize();
-
     // Función para cambiar la frase al hacer clic en el botón NEXT
     nextButton.addEventListener('click', async function () {
         await displayQuoteOfTheDay();
         adjustFontSize();
     });
-
-    favoritesButton.addEventListener('click', function () {
-        // Eliminar el contenido existente de main
-        const mainElement = document.getElementById('content');
-        mainElement.innerHTML = '';
     
-        // Verificar si el script ya se ha cargado
-        if (!document.getElementById('favoritesScript')) {
-            // Crear un nuevo script para cargar y ejecutar favorites.js dinámicamente
-            const script = document.createElement('script');
-            script.src = './js/favorites.js';
-            script.id = 'favoritesScript';
-    
-            // Agregar el script al head
-            document.head.appendChild(script);
-    
-            // Escuchar el evento 'load' del script antes de manipular el DOM en favorites.js
-            script.addEventListener('load', function () {
-                // Lógica adicional después de cargar el script, si es necesario
-                console.log('Script de favorites.js cargado correctamente');
-                
-                // Actualizar la lista de favoritos en la página de favoritos
-                updateFavoritesList(favoritesList);
-            });
-        } else {
-            // Lógica adicional si el script ya se cargó
-            console.log('El script de favorites.js ya se cargó anteriormente');
-            
-            // Actualizar la lista de favoritos en la página de favoritos
-            updateFavoritesList(favoritesList);
-        }
-    });
 });
