@@ -15,7 +15,6 @@
     h2Favorites.textContent = 'FAVOURITES';
     imgFavorites.src = './assets/img/little_owl.png';
     imgFavorites.alt = 'owl';
-
     asideFavorites.id = 'cards-Favorites';
 
     sectionButtonsFavorites.id = 'buttons-favorites';
@@ -37,3 +36,12 @@
     currentContent.replaceWith(mainElement);
 
 
+    const buttonHomeFavoritesAfterReplace = document.getElementById('buttons-favorites');
+
+        buttonHomeFavoritesAfterReplace.addEventListener('click', function () {
+            console.log('Botón Home clicado');
+            window.location.href= './index.html';
+        });
+        
+        
+  

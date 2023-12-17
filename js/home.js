@@ -133,4 +133,35 @@ document.addEventListener('DOMContentLoaded', async function () {
         adjustFontSize();
     });
 
+    favoritesButton.addEventListener('click', function () {
+        // Eliminar el contenido existente de main
+        const mainElement = document.getElementById('content');
+        mainElement.innerHTML = '';
+    
+        // Verificar si el script ya se ha cargado
+        if (!document.getElementById('favoritesScript')) {
+            // Crear un nuevo script para cargar y ejecutar favorites.js dinámicamente
+            const script = document.createElement('script');
+            script.src = './js/favorites.js';
+            script.id = 'favoritesScript';
+    
+            // Agregar el script al head
+            document.head.appendChild(script);
+    
+            // Escuchar el evento 'load' del script antes de manipular el DOM en favorites.js
+            script.addEventListener('load', function () {
+                // Lógica adicional después de cargar el script, si es necesario
+                console.log('Script de favorites.js cargado correctamente');
+                
+                // Actualizar la lista de favoritos en la página de favoritos
+                updateFavoritesList(favoritesList);
+            });
+        } else {
+            // Lógica adicional si el script ya se cargó
+            console.log('El script de favorites.js ya se cargó anteriormente');
+            
+            // Actualizar la lista de favoritos en la página de favoritos
+            updateFavoritesList(favoritesList);
+        }
+    });
 });
