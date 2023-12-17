@@ -28,12 +28,12 @@ document.addEventListener('DOMContentLoaded', async function () {
 
     function adjustFontSize() {
         const lineHeight = parseFloat(window.getComputedStyle(quoteContent).lineHeight);
-        const maxHeight = lineHeight * 12; // Altura máxima para 12 líneas
+        const maxHeight = lineHeight * 12; 
 
         if (quoteContent.clientHeight > maxHeight) {
-            quoteContent.style.fontSize = '1em'; // Cambiar el tamaño de la fuente a 1em o el valor que desees
+            quoteContent.style.fontSize = '1em'; 
         } else {
-            quoteContent.style.fontSize = '1.5em'; // Restablecer el tamaño de la fuente predeterminado
+            quoteContent.style.fontSize = '1.5em'; 
         }
     }
 
@@ -41,15 +41,14 @@ document.addEventListener('DOMContentLoaded', async function () {
 
     // Crear un span para el ícono de favoritos
     const favoritesIcon = document.createElement('i');
-    favoritesIcon.classList.add('fas', 'fa-heart'); // Ajusta las clases según tus necesidades
+    favoritesIcon.classList.add('fas', 'fa-heart'); 
 
     // Contenedor para el ícono de favoritos
     const favoritesIconContainer = document.createElement('div');
-    favoritesIconContainer.classList.add('favorites-icon-container'); // Clase para el div contenedor
+    favoritesIconContainer.classList.add('favorites-icon-container'); 
 
     // Establecer el ícono de favoritos como un botón
     favoritesIcon.addEventListener('click', function () {
-        // Aquí puedes agregar la lógica que desees para el botón de favoritos
         console.log('Botón de favoritos clickeado');
     });
 
@@ -93,7 +92,7 @@ document.addEventListener('DOMContentLoaded', async function () {
             const response = await fetch(apiUrl);
             const data = await response.json();
 
-            return data.text; // Devuelve la frase del día obtenida de la API
+            return data.text; 
         } catch (error) {
             console.error('Error fetching data:', error);
         }
