@@ -79,6 +79,7 @@ function obtenerFrasesFavoritas() {
                 // Crear un botón para eliminar la frase favorita
                 const deleteButton = document.createElement('button');
                 deleteButton.textContent = 'Eliminar';
+                deleteButton.innerHTML = '<i class="fas fa-heart"></i>';
                 deleteButton.addEventListener('click', function () {
                     // Eliminar la frase favorita y actualizar la interfaz
                     frasesFavoritas.splice(index, 1);
