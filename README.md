@@ -109,7 +109,7 @@ _[!NOTE]_
 - ⭐ Guardado de Favoritos: Marca tus curiosidades preferidas con un simple clic en la estrella.
 - 🗑️ Eliminación Intuitiva: Elimina curiosidades de la lista con facilidad usando el ícono de eliminar.
 
-_[!IMPORTANT]_
+>_[!IMPORTANT]_
 
 ## 🛠 Instrucciones de Instalación:
 
@@ -148,6 +148,7 @@ Grecia Landazuri - [perfil Linkedin](https://www.linkedin.com/in/grecialh/)
 
 Stephanie Céspedes - [Perfil Linkedin](https://www.linkedin.com/in/stephanie-cespedes)
 @
+
 _[!TIP]_
 
 ## 🚀 Desarrollo y Contribuciones
