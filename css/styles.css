@@ -2,169 +2,182 @@
 @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@500&family=Inter:wght@400;700&family=Jockey+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@500&family=Inter&family=Jockey+One&display=swap');
 @import url(./home.css);
-:root{
-    --pink-button:#F582AE;
-    --bluetext:#001858;
-    --background-title:#88D3DD;
+
+:root {
+    --pink-button: #F582AE;
+    --bluetext: #001858;
+    --background-title: #88D3DD;
     --background-page-button: #FEF6E4;
-    --fill-grey-cards:#d3d9f3;
-    --first-card-color:#B8C1EC;
-    --second-color:#ffffff;
-    --font-title:'jockey-one', sans-serif;
-    --font-content:'inter', sans-serif;
+    --fill-grey-cards: #d3d9f3;
+    --first-card-color: #B8C1EC;
+    --second-color: #ffffff;
+    --font-title: 'jockey-one', sans-serif;
+    --font-content: 'inter', sans-serif;
 }
-*{
+
+* {
     margin: 0;
     padding: 0;
 }
-.title{
-    color: var(--bluetext);
-    text-align: center;
-    font-family: Jockey One;
-    font-size: 50px;
-}
-.favorites-button{
-    background-color: var(--background-page-button);
-    border-color: var(--bluetext) solid;
-    padding: 0.3em 0.3em 0.4em;
-    border-radius: 8px;
-    border: 3px solid #172C66;
-    font-family: jockey one;
-    font-size: 33px;
-    width: 10em;
-    height: 78px;
-    cursor: pointer;
-}
-.next-button{
-    background-color: var(--pink-button);
-    border-color: var(--bluetext) solid;
-    padding: 0.3em 0.3em 0.4em;
-    border-radius: 8px;
-    border: 3px solid #172C66;
-    font-family: jockey one;
-    font-size: 33px;
-    width: 10em;
-    height: 78px;
-    cursor: pointer;
-}
 
-.container{
-    background-color: var(--background-title);
-    width: 100%;
-    height: 7em;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-#content {
-    display: grid;
-    height: 23em; /* Ajustar el tamaño del main */
-    grid-template-columns: repeat(2, 1fr); /* Dos columnas */
-    grid-template-rows: repeat(2, 1fr); /* Dos filas */
-    grid-gap: 0;
-}
+/* versión Desktop*/
 
-#section-logo {
-    grid-column: 1 / 2;
-    grid-row: 1 / 2;
-    background-color: var(--first-card-color);
-    padding: 1.5em;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-#section-logo img {
-    height: 26em;
-    width: 26em;
-}
+@media (min-width:1024px) {
 
-#buttons-section {
-    grid-column: 1 / 2;
-    grid-row: 2 / 3;
-    background-color: var(--first-card-color);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap:1em;
-    padding-bottom: 3em;
-}
+    .title {
+        color: var(--bluetext);
+        text-align: center;
+        font-family: Jockey One;
+        font-size: 50px;
+        background-color: var(--background-title);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 
-#cards-section {
-    grid-column: 2 / 3;
-    grid-row: 1 / 3; /* Ocupa dos filas completas */
-    background-color: var(--background-page-button);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+    .favorites-button {
+        background-color: var(--background-page-button);
+        border-color: var(--bluetext) solid;
+        padding: 0.3em 0.3em 0.4em;
+        border-radius: 8px;
+        border: 3px solid #172C66;
+        font-family: jockey one;
+        font-size: 33px;
+        width: 10em;
+        height: 78px;
+        cursor: pointer;
+    }
 
-/* Estilos caja contenedora frases e icono*/
-.card-container {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 22.588em; /* 681.409px / 16px = 42.588em */
-    margin: 0 auto;
-    height: 35em;
-    border-radius: 45px;
-    background-color: var(--fill-grey-cards);
-}
+    .next-button {
+        background-color: var(--pink-button);
+        border-color: var(--bluetext) solid;
+        padding: 0.3em 0.3em 0.4em;
+        border-radius: 8px;
+        border: 3px solid #172C66;
+        font-family: jockey one;
+        font-size: 33px;
+        width: 10em;
+        height: 78px;
+        cursor: pointer;
+    }
 
-/* Estilos para las tarjetas de frases */
-.quote-container {
-    background-color: var(--first-card-color);
-    border: 1px solid #ddd;
-    margin-bottom: 20px;
-    transition: transform 0.6s;
-    height: 32em; 
-    width: 300px;
-    border-radius: 45px;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Centrar verticalmente */
-    justify-content: space-between; 
-    transform: rotate(-13.731deg);
-    padding: 2em;
-}
-.quote-content {
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    padding-top: 5em ;
-    word-wrap: break-word;
-    font-family: Inter, sans-serif;
-    font-size: 1.5em;
-    max-width: 100%;
-    color: var(--bluetext);
-    font-weight: bold;
+    .container {
+        background-color: var(--background-title);
+        width: 100%;
+        height: 7em;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 
-}
-.favorites-icon-container {
-    display: flex;
-    justify-content: flex-end;
-    width: 100%;
-}
-.fa-heart:before {
-    content: "\f004";
-    color: var(--pink-button);
-    font-size: 3.5em;
-    cursor: pointer;
-}
+    #content {
+        display: grid;
+        height: 23em;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        grid-gap: 0;
+        background-color: var(--background-page-button);
+    }
 
-.favorites-container{
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
+    #section-logo {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+        background-color: var(--first-card-color);
+        padding: 1.5em;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #cards-section {
+        grid-column: 2 / 3;
+        grid-row: 1 / 3;
+        background-color: var(--background-page-button);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #section-logo img {
+        height: 26em;
+        width: 26em;
+    }
+
+    #buttons-section {
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
+        background-color: var(--first-card-color);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1em;
+        padding-bottom: 3em;
+    }
+
+
+    /* Estilos caja contenedora frases e icono*/
+    .card-container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        width: 22.588em;
+        margin: 0 auto;
+        height: 35em;
+        border-radius: 45px;
+        background-color: var(--fill-grey-cards);
+    }
+
+    /* Estilos para las tarjetas de frases */
+    .quote-container {
+        background-color: var(--first-card-color);
+        border: 1px solid #ddd;
+        margin-bottom: 20px;
+        transition: transform 0.6s;
+        height: 32em;
+        width: 300px;
+        border-radius: 45px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        transform: rotate(-13.731deg);
+        padding: 2em;
+    }
+
+    .quote-content {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        padding-top: 5em;
+        word-wrap: break-word;
+        font-family: Inter, sans-serif;
+        font-size: 1.5em;
+        max-width: 100%;
+        color: var(--bluetext);
+        font-weight: bold;
+
+    }
+
+    .favorites-icon-container {
+        display: flex;
+        justify-content: flex-end;
+        width: 100%;
+    }
+
+    .fa-heart:before {
+        content: "\f004";
+        color: var(--pink-button);
+        font-size: 3.5em;
+        cursor: pointer;
+    }
+
+    .favorites-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+    }
 }
-  /* Estilos para el contenedor de toda la tarjeta */
-.cards-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-top: 20px;
-  }

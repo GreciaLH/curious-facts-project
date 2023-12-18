@@ -1,84 +1,174 @@
 @import url(./styles.css);
 
-/* version móvil */
-
-@media (max-width: 767px) {
-.container {
-    display: flex;
-    width: 345px;
-    height: 105px;
-    justify-content: center;
-    align-items: center;
-
+/* Estilos base que se aplicarán en todos los tamaños de pantalla */
+:root {
+  --pink-button: #F582AE;
+  --bluetext: #001858;
+  --background-title: #88D3DD;
+  --background-page-button: #FEF6E4;
+  --fill-grey-cards: #d3d9f3;
+  --first-card-color: #B8C1EC;
+  --second-color: #ffffff;
+  --font-title: 'jockey-one', sans-serif;
+  --font-content: 'inter', sans-serif;
 }
-.title {
-    font-size: 33px;
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* Estilos para dispositivos móviles */
+
+
+@media (max-width: 896px) {
+  .title {
     color: var(--bluetext);
-}
+    text-align: center;
+    font-family: Jockey One;
+    font-size: 50px;
+  }
 
-#section-logo {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-  }
-  
-  #section-logo img {
-    width: 100px;
-    height: 100px;
-  }
-  
-  #cards-section {
+  .container {
+    background-color: var(--background-title);
+    width: 100%;
+    height: 7em;
     display: flex;
     justify-content: center;
     align-items: center;
   }
-  
+
+  .content {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    /* Tres filas: auto, 1fr, auto */
+    height: 100vh;
+    width: 100%;
+  }
+
+  #section-logo {
+    grid-row: 1 / 2;
+    background-color: var(--first-card-color);
+    width: 100%;
+    height: 376px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #section-logo img {
+    width: 15em;
+    height: 15em;
+  }
+
+
+  #cards-section {
+    grid-row: 2 / 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 519px;
+    width: 100%;
+    background-color: var(--background-page-button);
+    padding-top: 1em
+  }
+
+  #buttons-section {
+    grid-row: 3 / 4;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--background-page-button);
+    padding-top: 3em;
+    padding-bottom: 3em;
+  }
+
   .card-container {
-    width: 60%;
-    height: 200px;
-    background-color: #f0f0f0;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+
+    width: 17em;
+    height: 452px;
+    border-radius: 45px;
+    background-color: var(--fill-grey-cards);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     transition: 0.3s;
   }
-  
-  .card-container:hover {
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-  }
-  
+
   .quote-container {
-    font-family: Georgia, serif;
-    font-size: 24px;
-    font-style: italic;
-    color: #555;
-    padding: 20px;
-    overflow: auto;
-  }
-  
-  #buttons-section {
+    /* Modifica los estilos para la cita en dispositivos móviles */
+    background-color: var(--first-card-color);
+    border: 1px solid #ddd;
+    margin-bottom: 20px;
+    transition: transform 0.6s;
+    height: 23em;
+    width: 12em;
+    border-radius: 45px;
+    overflow: hidden;
     display: flex;
-    justify-content: space-around;
+    flex-direction: column;
     align-items: center;
-    margin-top: 20px;
+    /* Centrar verticalmente */
+    justify-content: space-between;
+    transform: rotate(-13.731deg);
+    padding: 2em;
   }
-  
-  .next-button, .favorites-button {
-    width: 100px;
-    height: 40px;
-    border: none;
-    border-radius: 4px;
-    background-color: #333;
-    color: white;
-    font-family: Arial, sans-serif;
-    font-size: 16px;
+
+  .quote-content {
+    /* Modifica los estilos para el contenido de la cita en dispositivos móviles */
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding-top: 2em;
+    word-wrap: break-word;
+    font-family: Inter, sans-serif;
+    font-size: 1.2em;
+    max-width: 100%;
+    color: var(--bluetext);
+    font-weight: bold;
+  }
+
+  .favorites-icon-container {
+    /* Modifica los estilos para el contenedor del icono de favoritos en dispositivos móviles */
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+  }
+
+  .fa-heart:before {
+    /* Modifica los estilos para el icono de favoritos en dispositivos móviles */
+    content: "\f004";
+    color: var(--pink-button);
+    font-size: 3em;
     cursor: pointer;
   }
-  
-  .next-button:hover, .favorites-button:hover {
-    background-color: #555;
+
+
+
+  .next-button {
+    background-color: var(--pink-button);
+    border-color: var(--bluetext) solid;
+    padding: 0.3em 0.3em 0.4em 0.3em;
+    border-radius: 8px;
+    border: 3px solid #172C66;
+    font-family: jockey one;
+    font-size: 33px;
+    width: 6em;
+    height: 2em;
+    cursor: pointer;
   }
-  
-  #asideFavorites {
-    display: none;;
+
+  .favorites-button {
+    background-color: var(--first-card-color);
+    border-color: var(--bluetext) solid;
+    padding: 0.3em 0.3em 0.4em;
+    border-radius: 8px;
+    border: 3px solid #172C66;
+    font-family: jockey one;
+    font-size: 33px;
+    width: 6em;
+    height: 2em;
+    cursor: pointer;
   }
- 
 }
