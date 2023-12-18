@@ -52,34 +52,34 @@ document.addEventListener('DOMContentLoaded', async function () {
     // Establecer el ícono de favoritos como un botón
     favoritesIcon.addEventListener('click', function () {
         const fraseActual = quoteContent.textContent.trim();
-
-        if (fraseActual) {
-            // Obtener frases favoritas almacenadas en localStorage
-            let frasesFavoritas = JSON.parse(localStorage.getItem('frasesFavoritas')) || [];
-
-            // Verificar si la frase ya está en la lista de favoritos
-            if (!frasesFavoritas.includes(fraseActual)) {
-                // Si no está en la lista, agrégala
-                frasesFavoritas.push(fraseActual);
-
-                // Guardar las frases favoritas actualizadas en localStorage
-                localStorage.setItem('frasesFavoritas', JSON.stringify(frasesFavoritas));
-
-                // Actualizar el contenido de asideFavorites en favorite.js
-                const event = new Event('frasesFavoritasUpdated');
-                document.dispatchEvent(event);
-
-                alert('Frase agregada a favoritos:', fraseActual);
-                
-                
-            } else {
-                alert('La frase ya está en la lista de favoritos.');
-                
-            }
-        } else {
+    
+        if (!fraseActual) {
             alert('No hay una frase para agregar a favoritos.');
+            return;
         }
+    
+        let favoritePhrases = JSON.parse(localStorage.getItem('favoritePhrases')) || [];
+    
+        if (favoritePhrases.includes(fraseActual)) {
+            alert('La frase ya está en la lista de favoritos.');
+            return;
+        }
+    
+        if (favoritePhrases.length >= 6) {
+            alert('¡Ya has alcanzado el límite máximo de 6 frases favoritas!');
+            return;
+        }
+    
+        favoritePhrases.push(fraseActual);
+        localStorage.setItem('favoritePhrases', JSON.stringify(favoritePhrases));
+    
+        const event = new Event('favoritePhrasesUpdated');
+        document.dispatchEvent(event);
+    
+        alert('Frase agregada a favoritos:', fraseActual);
     });
+    
+    
   
 
     // Agregar el ícono de favoritos al contenedor del ícono
@@ -144,16 +144,19 @@ document.addEventListener('DOMContentLoaded', async function () {
     // Función para mostrar la frase del día en el contenedor
     async function displayQuoteOfTheDay() {
         const quote = await fetchQuoteOfTheDay();
-
         if (quote) {
             quoteContent.textContent = quote;
         }
     }
+    // Mostrar la frase del día cuando se cargue la página
+    await displayQuoteOfTheDay();
+    adjustFontSize()
 
     // Función para cambiar la frase al hacer clic en el botón NEXT
     nextButton.addEventListener('click', async function () {
         await displayQuoteOfTheDay();
         adjustFontSize();
     });
+    
     
 });

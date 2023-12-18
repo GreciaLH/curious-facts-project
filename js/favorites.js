@@ -47,32 +47,31 @@
 // Agregamos estilos directamente a la sección para el fondo rojo
 asideFavorites.style.backgroundColor = 'red';
 
-function obtenerFrasesFavoritas() {
-        return JSON.parse(localStorage.getItem('frasesFavoritas')) || [];
+function getFavoritePhrases() {
+        return JSON.parse(localStorage.getItem('favoritePhrases')) || [];
     }
 
-
-    function guardarFrasesFavoritas(frases) {
-        localStorage.setItem('frasesFavoritas', JSON.stringify(frases));
+    function savePhrasesFavorites(frases) {
+        localStorage.setItem('favoritePhrases', JSON.stringify(frases));
     }
 
-    function mostrarFrasesFavoritas() {
+    function showFfavoritePhrases() {
         // Limpiar el contenido actual de asideFavorites
         asideFavorites.innerHTML = '';
 
         // Obtener las frases favoritas desde localStorage
-        const frasesFavoritas = obtenerFrasesFavoritas();
+        const favoritePhrases = getFavoritePhrases();
 
         // Verificar si hay frases favoritas para mostrar
-        if (frasesFavoritas.length > 0) {
-            frasesFavoritas.forEach(function (frase, index) {
+        if (favoritePhrases.length > 0) {
+            favoritePhrases.forEach(function (frase, index) {
                 // Crear un elemento para mostrar cada frase favorita
-                const fraseElement = document.createElement('div');
+                const quoteElement = document.createElement('div');
 
                 // Crear un elemento para mostrar la frase
-                const fraseText = document.createElement('span');
-                fraseText.textContent = frase;
-                fraseElement.appendChild(fraseText);
+                const quoteText = document.createElement('span');
+                quoteText.textContent = frase;
+                quoteElement.appendChild(quoteText);
 
                 // Crear un botón para eliminar la frase favorita
                 const deleteButton = document.createElement('button');
@@ -80,15 +79,15 @@ function obtenerFrasesFavoritas() {
                 deleteButton.innerHTML = '<i class="fas fa-heart"></i>';
                 deleteButton.addEventListener('click', function () {
                     // Eliminar la frase favorita y actualizar la interfaz
-                    frasesFavoritas.splice(index, 1);
-                    guardarFrasesFavoritas(frasesFavoritas);
-                    mostrarFrasesFavoritas();
+                    favoritePhrases.splice(index, 1);
+                    savePhrasesFavorites(favoritePhrases);
+                    showFfavoritePhrases();
                 });
 
-                fraseElement.appendChild(deleteButton);
+                quoteElement.appendChild(deleteButton);
 
                 // Agregar el elemento al contenedor asideFavorites
-                asideFavorites.appendChild(fraseElement);
+                asideFavorites.appendChild(quoteElement);
             });
         } else {
             // Mostrar un mensaje si no hay frases favoritas
@@ -98,4 +97,4 @@ function obtenerFrasesFavoritas() {
         }
     }
 
-    mostrarFrasesFavoritas();
+    showFfavoritePhrases();
