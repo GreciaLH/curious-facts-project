@@ -1,5 +1,4 @@
-
-    // Creo todos los elementos necesarios
+  // Creo todos los elementos necesarios
     const mainElement = document.createElement('main');
     const sectionLogoFavorites = document.createElement('section');
     const h2Favorites = document.createElement('h2');
@@ -52,12 +51,11 @@ function obtenerFrasesFavoritas() {
         return JSON.parse(localStorage.getItem('frasesFavoritas')) || [];
     }
 
-    // Función para guardar las frases favoritas en localStorage
+
     function guardarFrasesFavoritas(frases) {
         localStorage.setItem('frasesFavoritas', JSON.stringify(frases));
     }
 
-    // Función para mostrar las frases favoritas en la interfaz de usuario
     function mostrarFrasesFavoritas() {
         // Limpiar el contenido actual de asideFavorites
         asideFavorites.innerHTML = '';
@@ -100,5 +98,4 @@ function obtenerFrasesFavoritas() {
         }
     }
 
-    // Llamar a la función para mostrar las frases favoritas al cargar la página
     mostrarFrasesFavoritas();

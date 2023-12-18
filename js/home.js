@@ -69,15 +69,18 @@ document.addEventListener('DOMContentLoaded', async function () {
                 const event = new Event('frasesFavoritasUpdated');
                 document.dispatchEvent(event);
 
-                console.log('Frase agregada a favoritos:', fraseActual);
+                alert('Frase agregada a favoritos:', fraseActual);
+                
+                
             } else {
-                console.log('La frase ya está en la lista de favoritos.');
+                alert('La frase ya está en la lista de favoritos.');
+                
             }
         } else {
-            console.error('No hay una frase para agregar a favoritos.');
+            alert('No hay una frase para agregar a favoritos.');
         }
     });
-
+  
 
     // Agregar el ícono de favoritos al contenedor del ícono
     favoritesIconContainer.appendChild(favoritesIcon);
