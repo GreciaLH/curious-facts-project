@@ -44,8 +44,8 @@
             window.location.href = './index.html';
         });
 
-// Agregamos estilos directamente a la sección para el fondo rojo
-asideFavorites.style.backgroundColor = 'red';
+// // Agregamos estilos directamente a la sección para el fondo rojo
+// asideFavorites.style.backgroundColor = 'red';
 
 function getFavoritePhrases() {
         return JSON.parse(localStorage.getItem('favoritePhrases')) || [];
