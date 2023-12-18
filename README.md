@@ -1,5 +1,5 @@
 ## Curious Facts Project
-[!NOTE]
+_[!NOTE]_
 
 🌐 Description:
 Curious Facts is a web application that provides fascinating data obtained from an API. It offers an interactive experience where users can explore, save, and delete curiosities easily.
@@ -27,7 +27,7 @@ Curious Facts is a web application that provides fascinating data obtained from 
 star.
 - 🗑️ Intuitive Deletion: Easily delete curiosities from the list using the delete icon.
 
-[!IMPORTANT]
+_[!IMPORTANT]_
 
 ## 🛠 Installation Instructions:
 
@@ -64,7 +64,8 @@ Grecia Landazuri - LinkedIn profile
 
 Stephanie Céspedes - LinkedIn profile
 
-[!TIP]
+
+_[!TIP]_
 
 ## 🚀 Development and Contributions
 
