@@ -63,6 +63,8 @@ function showFfavoritePhrases() {
         favoritePhrases.forEach(function (frase, index) {
             // Crear un elemento para mostrar cada frase favorita
             const quoteElement = document.createElement("div");
+            quoteElement.classList.add('card-generated');
+
             // Crear un elemento para mostrar la frase
             const quoteText = document.createElement("span");
             quoteText.textContent = frase;
