@@ -30,12 +30,12 @@ document.addEventListener('DOMContentLoaded', async function () {
 
     function adjustFontSize() {
         const lineHeight = parseFloat(window.getComputedStyle(quoteContent).lineHeight);
-        const maxHeight = lineHeight * 12; 
+        const maxHeight = lineHeight * 12; // Altura máxima para 12 líneas
 
         if (quoteContent.clientHeight > maxHeight) {
-            quoteContent.style.fontSize = '1em'; 
+            quoteContent.style.fontSize = '1em'; // Cambiar el tamaño de la fuente a 1em o el valor que desees
         } else {
-            quoteContent.style.fontSize = '1.5em'; 
+            quoteContent.style.fontSize = '1.5em'; // Restablecer el tamaño de la fuente predeterminado
         }
     }
 
@@ -43,16 +43,44 @@ document.addEventListener('DOMContentLoaded', async function () {
 
     // Crear un span para el ícono de favoritos
     const favoritesIcon = document.createElement('i');
-    favoritesIcon.classList.add('fas', 'fa-heart'); 
+    favoritesIcon.classList.add('fas', 'fa-heart'); // Ajusta las clases según tus necesidades
 
     // Contenedor para el ícono de favoritos
     const favoritesIconContainer = document.createElement('div');
-    favoritesIconContainer.classList.add('favorites-icon-container'); 
+    favoritesIconContainer.classList.add('favorites-icon-container'); // Clase para el div contenedor
 
     // Establecer el ícono de favoritos como un botón
     favoritesIcon.addEventListener('click', function () {
-        console.log('Botón de favoritos clickeado');
+        const fraseActual = quoteContent.textContent.trim();
+    
+        if (!fraseActual) {
+            alert('No hay una frase para agregar a favoritos.');
+            return;
+        }
+    
+        let favoritePhrases = JSON.parse(localStorage.getItem('favoritePhrases')) || [];
+    
+        if (favoritePhrases.includes(fraseActual)) {
+            alert('La frase ya está en la lista de favoritos.');
+            return;
+        }
+    
+        if (favoritePhrases.length >= 6) {
+            alert('¡Ya has alcanzado el límite máximo de 6 frases favoritas!');
+            return;
+        }
+    
+        favoritePhrases.push(fraseActual);
+        localStorage.setItem('favoritePhrases', JSON.stringify(favoritePhrases));
+    
+        const event = new Event('favoritePhrasesUpdated');
+        document.dispatchEvent(event);
+    
+        alert('Frase agregada a favoritos:', fraseActual);
     });
+    
+    
+  
 
     // Agregar el ícono de favoritos al contenedor del ícono
     favoritesIconContainer.appendChild(favoritesIcon);
@@ -107,7 +135,7 @@ document.addEventListener('DOMContentLoaded', async function () {
             const response = await fetch(apiUrl);
             const data = await response.json();
 
-            return data.text; 
+            return data.text; // Devuelve la frase del día obtenida de la API
         } catch (error) {
             console.error('Error fetching data:', error);
         }
@@ -116,20 +144,19 @@ document.addEventListener('DOMContentLoaded', async function () {
     // Función para mostrar la frase del día en el contenedor
     async function displayQuoteOfTheDay() {
         const quote = await fetchQuoteOfTheDay();
-
         if (quote) {
             quoteContent.textContent = quote;
         }
     }
-
     // Mostrar la frase del día cuando se cargue la página
     await displayQuoteOfTheDay();
-    adjustFontSize();
+    adjustFontSize()
 
     // Función para cambiar la frase al hacer clic en el botón NEXT
     nextButton.addEventListener('click', async function () {
         await displayQuoteOfTheDay();
         adjustFontSize();
     });
-
+    
+    
 });
