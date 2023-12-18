@@ -1,8 +1,9 @@
 ## Curious Facts Project
-_[!NOTE]_
-
-🌐 Description:
-Curious Facts is a web application that provides fascinating data obtained from an API. It offers an interactive experience where users can explore, save, and delete curiosities easily.
+> [!NOTE]  
+> 🌐 Description:
+> 
+> Curious Facts is a web application that provides fascinating data obtained from an API. It offers an interactive experience where users  
+  can explore, save, and delete curiosities easily.
 
 ## 👩‍💻 Technologies Used:
 - JavaScript
@@ -27,9 +28,14 @@ Curious Facts is a web application that provides fascinating data obtained from 
 star.
 - 🗑️ Intuitive Deletion: Easily delete curiosities from the list using the delete icon.
 
+<<<<<<< HEAD
 _[!IMPORTANT]_
 
 ## 🛠 Installation Instructions:
+=======
+>[!IMPORTANT]
+> ## 🛠 Installation Instructions:
+>>>>>>> 800199708189e107c10233c70098001641328d7b
 
 Clone this repository into the desired folder using the git clone command:
 https://github.com/tephyxp/curious-facts-project.git
@@ -56,20 +62,25 @@ To run tests with Vitest, follow these steps:
 
 ## 👩‍💻 Developers:
 
-Alicia Ontiveros - LinkedIn profile
+Alicia Ontiveros - [Linkedin profile](https://www.linkedin.com/in/alicia-ontiveros-escudero)
 
-Stefania Georgescu - LinkedIn profile
+Stefania Georgescu - [Linkedin profile](http://www.linkedin.com/in/stefania-georgescu-602700112)
 
-Grecia Landazuri - LinkedIn profile
+Grecia Landazuri - [Linkedin profile](https://www.linkedin.com/in/grecialh/)
 
-Stephanie Céspedes - LinkedIn profile
+Stephanie Céspedes - [Linkedin profile](https://www.linkedin.com/in/stephanie-cespedes)
 
+
+<<<<<<< HEAD
 
 _[!TIP]_
+=======
+>[!TIP]
+>## 🚀 Development and Contributions
+>>>>>>> 800199708189e107c10233c70098001641328d7b
 
-## 🚀 Development and Contributions
+🎖 Contribute to the development of this application by following these steps!
 
-Contribute to the development of this application by following these steps!
 Fork the repository.
 Clone your forked repository locally.
 Create a new branch: git checkout -b branch-name.
@@ -82,9 +93,9 @@ Thank you for your contribution!
 
 ## Proyecto de Hechos curiosos
 
-_[!NOTE]_
+> [!NOTE]
+> ## 🌐 Descripción:
 
-## 🌐 Descripción:
 - Hechos Curiosos es una aplicación web que proporciona datos fascinantes obtenidos de una API. Ofrece una experiencia interactiva donde los usuarios pueden explorar, guardar y eliminar curiosidades de manera sencilla.
 
 ## 👩‍💻 Tecnologías Utilizadas:
@@ -109,9 +120,14 @@ _[!NOTE]_
 - ⭐ Guardado de Favoritos: Marca tus curiosidades preferidas con un simple clic en la estrella.
 - 🗑️ Eliminación Intuitiva: Elimina curiosidades de la lista con facilidad usando el ícono de eliminar.
 
+<<<<<<< HEAD
 >_[!IMPORTANT]_
 
 ## 🛠 Instrucciones de Instalación:
+=======
+>[!IMPORTANT]
+>## 🛠 Instrucciones de Instalación:
+>>>>>>> 800199708189e107c10233c70098001641328d7b
 
 1. Clona este repositorio en la carpeta deseada con el comando `git clone`: 
   https://github.com/tephyxp/curious-facts-project.git
@@ -147,12 +163,18 @@ Stefania Georgescu - [perfil Linkedin](http://www.linkedin.com/in/stefania-georg
 Grecia Landazuri - [perfil Linkedin](https://www.linkedin.com/in/grecialh/)
 
 Stephanie Céspedes - [Perfil Linkedin](https://www.linkedin.com/in/stephanie-cespedes)
+<<<<<<< HEAD
 @
 
 _[!TIP]_
+=======
+>>>>>>> 800199708189e107c10233c70098001641328d7b
 
-## 🚀 Desarrollo y Contribuciones
-- ¡Contribuye al desarrollo de esta aplicación siguiendo estos pasos!
+
+>[!TIP]
+>## 🚀 Desarrollo y Contribuciones
+
+🎖 ¡Contribuye al desarrollo de esta aplicación siguiendo estos pasos!
 
 1. Forkea el repositorio.
 2. Clona tu repositorio forkeado localmente.
