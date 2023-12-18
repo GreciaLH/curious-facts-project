@@ -1,5 +1,5 @@
 ## Curious Facts Project
-[!NOTE]
+_[!NOTE]_
 
 🌐 Description:
 Curious Facts is a web application that provides fascinating data obtained from an API. It offers an interactive experience where users can explore, save, and delete curiosities easily.
