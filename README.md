@@ -3,45 +3,59 @@
 
 🌐 Description:
 Curious Facts is a web application that provides fascinating data obtained from an API. It offers an interactive experience where users can explore, save, and delete curiosities easily.
-👩‍💻 Technologies Used:
-JavaScript
-HTML
-CSS
-Vite
-Vitest
-📁 File Structure:
-index.html: Represents our single page (Single-page Application)
-css/: Folder containing project's CSS styles.
-js/: Folder containing JavaScript scripts that will manipulate the interactive content of our html page through DOM manipulation.
-assets/: Folder storing multimedia resources such as images or icons.
-test/: Folder containing the file responsible for testing our project.
-📚 Features:
-🔄 Random Query: Get random curious data by clicking "Get Curiosity."
-⭐ Favorites Save: Mark your favorite curiosities with a simple click on the star.
-🗑️ Intuitive Deletion: Easily delete curiosities from the list using the delete icon.
+
+## 👩‍💻 Technologies Used:
+- JavaScript
+- HTML
+- CSS
+- Vite
+- Vitest
+
+## 📁 File Structure:
+
+- Index.html: Represents our single page (Single-page Application)
+- css/: Folder containing project's CSS styles.
+- js/: Folder containing JavaScript scripts that will manipulate the 
+  interactive content of our html page through DOM manipulation.
+- assets/: Folder storing multimedia resources such as images or icons.
+- test/: Folder containing the file responsible for testing our project.
+
+## 📚 Features:
+
+- 🔄 Random Query: Get random curious data by clicking "Get Curiosity."
+- ⭐ Favorites Save: Mark your favorite curiosities with a simple click on the 
+star.
+- 🗑️ Intuitive Deletion: Easily delete curiosities from the list using the delete icon.
+
 [!IMPORTANT]
 
-🛠 Installation Instructions:
+## 🛠 Installation Instructions:
+
 Clone this repository into the desired folder using the git clone command:
 https://github.com/tephyxp/curious-facts-project.git
 
 To run tests with Vitest, follow these steps:
 
-Open a terminal and navigate to the project folder.
-Run the following command to install necessary dependencies:
-Copy code
-npm install
-Once the dependencies are installed, you can run the tests using the command:
-bash
-Copy code
-npm test
-📝 Usage Instructions:
-Open index.html in your web browser.
-Explore curious data by clicking "Get Curiosity."
-Mark your favorites with the star icon.
-Delete curiosities using the delete icon.
-Page Demo
-👩‍💻 Developers:
+1. Open a terminal and navigate to the project folder.
+2. Run the following command to install necessary dependencies:
+  ```
+  npm install
+  ```
+3. Once the dependencies are installed, you can run the tests using the command:
+  ```
+  npm test
+  ```
+## 📝 Usage Instructions:
+1. Open index.html in your web browser.
+2. Explore curious data by clicking "Get Curiosity."
+3. Mark your favorites with the star icon.
+4. Delete curiosities using the delete icon.
+
+## Page Demo
+![Index.html](./assets/img/demo-pagina.png) 
+
+## 👩‍💻 Developers:
+
 Alicia Ontiveros - LinkedIn profile
 
 Stefania Georgescu - LinkedIn profile
@@ -52,7 +66,8 @@ Stephanie Céspedes - LinkedIn profile
 
 [!TIP]
 
-🚀 Development and Contributions
+## 🚀 Development and Contributions
+
 Contribute to the development of this application by following these steps!
 Fork the repository.
 Clone your forked repository locally.
@@ -120,6 +135,7 @@ _[!IMPORTANT]_
 
 ## Demo de la página 
 
+![Index.html](./assets/img/demo-pagina.png)
 
 ## 👩‍💻 Desarrolladoras:
 
