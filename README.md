@@ -28,14 +28,8 @@
 star.
 - 🗑️ Intuitive Deletion: Easily delete curiosities from the list using the delete icon.
 
-<<<<<<< HEAD
-_[!IMPORTANT]_
-
-## 🛠 Installation Instructions:
-=======
 >[!IMPORTANT]
 > ## 🛠 Installation Instructions:
->>>>>>> 800199708189e107c10233c70098001641328d7b
 
 Clone this repository into the desired folder using the git clone command:
 https://github.com/tephyxp/curious-facts-project.git
@@ -71,13 +65,8 @@ Grecia Landazuri - [Linkedin profile](https://www.linkedin.com/in/grecialh/)
 Stephanie Céspedes - [Linkedin profile](https://www.linkedin.com/in/stephanie-cespedes)
 
 
-<<<<<<< HEAD
-
-_[!TIP]_
-=======
 >[!TIP]
 >## 🚀 Development and Contributions
->>>>>>> 800199708189e107c10233c70098001641328d7b
 
 🎖 Contribute to the development of this application by following these steps!
 
@@ -120,14 +109,8 @@ Thank you for your contribution!
 - ⭐ Guardado de Favoritos: Marca tus curiosidades preferidas con un simple clic en la estrella.
 - 🗑️ Eliminación Intuitiva: Elimina curiosidades de la lista con facilidad usando el ícono de eliminar.
 
-<<<<<<< HEAD
->_[!IMPORTANT]_
-
-## 🛠 Instrucciones de Instalación:
-=======
 >[!IMPORTANT]
 >## 🛠 Instrucciones de Instalación:
->>>>>>> 800199708189e107c10233c70098001641328d7b
 
 1. Clona este repositorio en la carpeta deseada con el comando `git clone`: 
   https://github.com/tephyxp/curious-facts-project.git
@@ -163,12 +146,6 @@ Stefania Georgescu - [perfil Linkedin](http://www.linkedin.com/in/stefania-georg
 Grecia Landazuri - [perfil Linkedin](https://www.linkedin.com/in/grecialh/)
 
 Stephanie Céspedes - [Perfil Linkedin](https://www.linkedin.com/in/stephanie-cespedes)
-<<<<<<< HEAD
-@
-
-_[!TIP]_
-=======
->>>>>>> 800199708189e107c10233c70098001641328d7b
 
 
 >[!TIP]
