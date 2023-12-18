@@ -4,12 +4,12 @@
     const h2Favorites = document.createElement('h2');
     const imgFavorites = document.createElement('img');
     const asideFavorites = document.createElement('aside');
-  
-
     const sectionButtonsFavorites = document.createElement('section');
     const buttonHomeFavorites = document.createElement('button');
+    const returnButton = document.createElement('button');
+    const arrowIcon = document.createElement('i')
 
-    // Establecemos atributos y contenido
+    // Identificadores // Establecemos atributos y contenido
     mainElement.id = 'content';
     sectionLogoFavorites.id = 'logo-favorites';
     h2Favorites.classList.add('Favorite');
@@ -17,17 +17,17 @@
     imgFavorites.src = './assets/img/little_owl.png';
     imgFavorites.alt = 'owl';
     asideFavorites.id = 'cards-Favorites';
-
     sectionButtonsFavorites.id = 'buttons-favorites';
     buttonHomeFavorites.classList.add('Home');
     buttonHomeFavorites.textContent = 'HOME';
+    returnButton.id = 'return-button';
 
     // Connstruimos la estrutura
     sectionLogoFavorites.appendChild(h2Favorites);
     sectionLogoFavorites.appendChild(imgFavorites);
 
     // Agregamos al DOM
-    mainElement.appendChild(sectionLogoFavorites);
+    mainElement.appendChild(sectionLogoFavorites); 
     mainElement.appendChild(asideFavorites);
     mainElement.appendChild(sectionButtonsFavorites);
     sectionButtonsFavorites.appendChild(buttonHomeFavorites);
@@ -56,23 +56,18 @@ function getFavoritePhrases() {
     }
 
     function showFfavoritePhrases() {
-        // Limpiar el contenido actual de asideFavorites
         asideFavorites.innerHTML = '';
 
-        // Obtener las frases favoritas desde localStorage
         const favoritePhrases = getFavoritePhrases();
-
         // Verificar si hay frases favoritas para mostrar
         if (favoritePhrases.length > 0) {
             favoritePhrases.forEach(function (frase, index) {
                 // Crear un elemento para mostrar cada frase favorita
                 const quoteElement = document.createElement('div');
-
                 // Crear un elemento para mostrar la frase
                 const quoteText = document.createElement('span');
                 quoteText.textContent = frase;
                 quoteElement.appendChild(quoteText);
-
                 // Crear un botón para eliminar la frase favorita
                 const deleteButton = document.createElement('button');
                 deleteButton.textContent = 'Eliminar';
@@ -83,9 +78,7 @@ function getFavoritePhrases() {
                     savePhrasesFavorites(favoritePhrases);
                     showFfavoritePhrases();
                 });
-
                 quoteElement.appendChild(deleteButton);
-
                 // Agregar el elemento al contenedor asideFavorites
                 asideFavorites.appendChild(quoteElement);
             });
@@ -98,3 +91,10 @@ function getFavoritePhrases() {
     }
 
     showFfavoritePhrases();
+
+    arrowIcon.classList.add('fas', 'fa-arrow-left');
+    returnButton.appendChild(arrowIcon);
+    returnButton.addEventListener('click', function () {
+      window.location.href = './index.html';;
+    });
+    document.body.appendChild(returnButton);
