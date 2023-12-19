@@ -13,40 +13,40 @@
     --font-content: 'inter', sans-serif;
   }
 
+
   * {
     margin: 0;
     padding: 0;
 }
+@media (max-width: 896px) {
 
 #titleButtonFavorites img {
     display: none;
 }
 
 #contentSection{
+    min-height: 40rem;
     display: flex;
     flex-direction: column;
     background-color: var(--background-page-button);
-    height: 42em;
 }
-
 #buttons-favorites {
     width: 100%;
-    text-align: center; /* Centra el botón horizontalmente */
+    text-align: center;
     margin-bottom: 40px;
 }
-
 #buttons-favorites .Home {
-    background-color: #B8C1EC; /* Ajusta el color de fondo según tus preferencias */
-    border-color: #172C66 solid; /* Ajusta el color del borde según tus preferencias */
+    border-color: #172C66 solid;
     color: var(--bluetext);
     border-radius: 8px;
     border: 3px solid #172C66;
-    font-family: 'jockey one', sans-serif; /* Ajusta la fuente según tus preferencias */
-    font-size: 1.3rem;
+    font-family: 'jockey one', sans-serif;
+    font-size: 2rem;
     padding: 1%;
-    width: 40%;
-    cursor: pointer;
+    width: 60%;
+    height: 2em;
 }
+
 
 .Favorite {
     font-family: Jockey One;
@@ -61,6 +61,7 @@
     grid-template-columns: repeat(1, 1fr);
     place-items: center;
 }
+
 
 .card-generated{
     display: flex;
@@ -101,16 +102,17 @@
     outline: none;
     background-color: initial;
     font-size: 0.6rem;
-    cursor: pointer;
+}
 }
 
-/* versión Desktop*/
+/****** versión Desktop******/
+
 
 @media (min-width:1024px) {
     #contentSection{
         display: flex;
         flex-direction: row;
-        min-height: 500px;
+        min-height: 42rem;
 }
 #titleButtonFavorites{
     background-color: var(--first-card-color);
@@ -148,21 +150,16 @@
         margin-top: 40px;
     }
     #buttons-favorites .Home{
-        background-color: var(--background-page-button);
-        border-color: var(--bluetext) solid;
-        padding: 0.3em 0.3em 0.4em;
-        border-radius: 8px;
-        border: 3px solid #172C66;
-        font-family: jockey one;
-        font-size: 33px;
-        width: 10em;
         height: 78px;
-        cursor: pointer;
+        background-color: var(--background-page-button);
     }
 }
+<<<<<<< HEAD
 
 @media (max-width: 896px) {
     body{
         background-color: var(--background-page-button);
     }
 }
+=======
+>>>>>>> dca80c66d1d03013e6e93fab565cebbc9909cbc2
