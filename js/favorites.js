@@ -1,5 +1,5 @@
 // Creo todos los elementos necesarios
-const mainElement = document.createElement("main");
+const mainSection = document.createElement("section");
 const sectionLogoFavorites = document.createElement("section");
 const h2Favorites = document.createElement("h2");
 const imgFavorites = document.createElement("img");
@@ -8,32 +8,36 @@ const sectionButtonsFavorites = document.createElement("section");
 const buttonHomeFavorites = document.createElement("button");
 const scrollToTopButton = document.createElement("button");
 const arrowIcon = document.createElement("i");
+const titleButtonFav = document.createElement("div");
 
 // Identificadores // Establecemos atributos y contenido
-mainElement.id = "content";
+mainSection.id = "contentSection";
 sectionLogoFavorites.id = "logo-favorites";
 h2Favorites.classList.add("Favorite");
-h2Favorites.textContent = "FAVOURITES";
+h2Favorites.textContent = "FAVORITES";
 imgFavorites.src = "./assets/img/bohologo.png";
 imgFavorites.alt = "owl";
 asideFavorites.id = "cards-Favorites";
 sectionButtonsFavorites.id = "buttons-favorites";
 buttonHomeFavorites.classList.add("Home");
 buttonHomeFavorites.textContent = "HOME";
+titleButtonFav.id = "titleButtonFavorites";
 
-// Connstruimos la estrutura
+// Construimos la estrutura
 sectionLogoFavorites.appendChild(h2Favorites);
-sectionLogoFavorites.appendChild(imgFavorites);
 
 // Agregamos al DOM
-mainElement.appendChild(sectionLogoFavorites);
-mainElement.appendChild(sectionButtonsFavorites);
-mainElement.appendChild(asideFavorites);
+mainSection.appendChild(titleButtonFav);
+titleButtonFav.appendChild(sectionLogoFavorites);
+titleButtonFav.appendChild(sectionButtonsFavorites);
+titleButtonFav.appendChild(imgFavorites);
+mainSection.appendChild(asideFavorites);
+
 sectionButtonsFavorites.appendChild(buttonHomeFavorites);
 
 // Reemplazamos el contenido actual con la página de favoritos
 const currentContent = document.getElementById("content");
-currentContent.replaceWith(mainElement);
+currentContent.replaceWith(mainSection);
 
 const buttonHomeFavoritesAfterReplace =
     document.getElementById("buttons-favorites");
@@ -98,7 +102,8 @@ const svgImage = document.createElement("img");
 svgImage.src = svgImagePath;
 scrollToTopButton.appendChild(svgImage);
 scrollToTopButton.id = "scrollToTopButton";
-document.body.appendChild(scrollToTopButton);
+mainSection.appendChild(scrollToTopButton);
+/*document.body.appendChild(scrollToTopButton);*/
 
 // Función para desplazarse suavemente hacia arriba
 function scrollToTop() {
