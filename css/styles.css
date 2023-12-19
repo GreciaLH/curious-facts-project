@@ -46,6 +46,7 @@
         width: 10em;
         height: 78px;
         cursor: pointer;
+        color:var(--bluetext)
     }
 
     .next-button {
@@ -59,6 +60,7 @@
         width: 10em;
         height: 78px;
         cursor: pointer;
+        color:var(--bluetext)
     }
 
     .container {
