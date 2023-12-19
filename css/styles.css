@@ -180,4 +180,16 @@
         flex-direction: column;
         justify-content: flex-end;
     }
+    .swal2-popup {
+        background-color: #f0f0f0;
+
+    }
+
+    .custom-title-class {
+        font-size: 20px; /* Ajusta el tamaño del texto según tus preferencias */
+        color: #001858; /* Puedes ajustar el color del texto según tus preferencias */
+
+      }
+        
+      
 }

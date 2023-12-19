@@ -21,7 +21,7 @@ sectionButtonsFavorites.id = "buttons-favorites";
 buttonHomeFavorites.classList.add("Home");
 buttonHomeFavorites.textContent = "HOME";
 
-// Connstruimos la estrutura
+// Construimos la estrutura
 sectionLogoFavorites.appendChild(h2Favorites);
 sectionLogoFavorites.appendChild(imgFavorites);
 

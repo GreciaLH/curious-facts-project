@@ -50,38 +50,82 @@ document.addEventListener('DOMContentLoaded', async function () {
     favoritesIconContainer.classList.add('favorites-icon-container'); // Clase para el div contenedor
 
     // Establecer el ícono de favoritos como un botón
-    favoritesIcon.addEventListener('click', function () {
-        const fraseActual = quoteContent.textContent.trim();
-    
-        if (!fraseActual) {
-            alert('No hay una frase para agregar a favoritos.');
-            return;
-        }
-    
-        let favoritePhrases = JSON.parse(localStorage.getItem('favoritePhrases')) || [];
-    
-        if (favoritePhrases.includes(fraseActual)) {
-            alert('La frase ya está en la lista de favoritos.');
-            return;
-        }
-    
-        if (favoritePhrases.length >= 6) {
-            alert('¡Ya has alcanzado el límite máximo de 6 frases favoritas!');
-            return;
-        }
-    
-        favoritePhrases.push(fraseActual);
-        localStorage.setItem('favoritePhrases', JSON.stringify(favoritePhrases));
-    
-        const event = new Event('favoritePhrasesUpdated');
-        document.dispatchEvent(event);
-    
-        alert('Frase agregada a favoritos:', fraseActual);
-    });
-    
-    
-  
+// ...
 
+favoritesIcon.addEventListener('click', function () {
+    const fraseActual = quoteContent.textContent.trim();
+  
+    if (!fraseActual) {
+      showSweetAlert('No hay una frase para agregar a favoritos.', 'info');
+      return;
+    }
+  
+    let favoritePhrases = JSON.parse(localStorage.getItem('favoritePhrases')) || [];
+  
+    if (favoritePhrases.includes(fraseActual)) {
+      showSweetAlert('La frase ya está en la lista de favoritos.', 'info');
+      return;
+    }
+  
+    if (favoritePhrases.length >= 6) {
+      showSweetAlert('¡Ya has alcanzado el límite máximo de 6 frases favoritas!', 'info');
+      return;
+    }
+  
+    favoritePhrases.push(fraseActual);
+    localStorage.setItem('favoritePhrases', JSON.stringify(favoritePhrases));
+  
+    const event = new Event('favoritePhrasesUpdated');
+    document.dispatchEvent(event);
+  
+    showSweetAlert('Frase agregada a favoritos', 'success');
+});
+
+function showSweetAlert(message, iconType) {
+    let icon;
+    
+    // Selecciona el icono según el tipo proporcionado
+    if (iconType === 'success') {
+        icon = 'success';
+    } else {
+        icon = 'info';
+    }
+
+    Swal.fire({
+        title: message,
+        icon: icon,
+        // imageUrl: './assets/img/bohologo.png',
+        confirmButtonText: 'Cerrar',
+        imageWidth: 130, // Ancho de la imagen en píxeles
+        imageHeight: 80, // Altura de la imagen en píxeles 
+        customClass: {
+            title: 'custom-title-class' // Clase personalizada para el título
+        }
+    });
+}
+
+
+function showSweetAlert(message, iconType) {
+    let icon;
+    
+    // Selecciona el icono según el tipo proporcionado
+    if (iconType === 'success') {
+        icon = 'success';
+    } else {
+        icon = 'info';
+    }
+
+    Swal.fire({
+        text: message,
+        icon: icon,
+        confirmButtonText: 'Cerrar',
+        customClass: {
+        title: 'custom-title-class' // Clase personalizada para el título
+        }
+    });
+}
+
+    
     // Agregar el ícono de favoritos al contenedor del ícono
     favoritesIconContainer.appendChild(favoritesIcon);
 
@@ -157,6 +201,5 @@ document.addEventListener('DOMContentLoaded', async function () {
         await displayQuoteOfTheDay();
         adjustFontSize();
     });
-    
-    
+
 });
