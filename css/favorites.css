@@ -50,6 +50,7 @@
     font-size: 1.3rem;
     padding: 1%;
     width: 40%;
+    cursor: pointer;
 }
 
 .Favorite {
@@ -105,6 +106,7 @@
     outline: none;
     background-color: initial;
     font-size: 0.6rem;
+    cursor: pointer;
 }
 
 /* versión Desktop*/
