@@ -52,33 +52,62 @@ document.addEventListener('DOMContentLoaded', async function () {
     // Establecer el ícono de favoritos como un botón
     favoritesIcon.addEventListener('click', function () {
         const fraseActual = quoteContent.textContent.trim();
-    
         if (!fraseActual) {
-            alert('No hay una frase para agregar a favoritos.');
-            return;
+          showSweetAlert('There is no phrase to add to favorites', 'info');
+          return;
         }
-    
         let favoritePhrases = JSON.parse(localStorage.getItem('favoritePhrases')) || [];
-    
         if (favoritePhrases.includes(fraseActual)) {
-            alert('La frase ya está en la lista de favoritos.');
-            return;
+          showSweetAlert('The phrase is already in the favorites list.', 'info');
+          return;
         }
-    
         if (favoritePhrases.length >= 6) {
-            alert('¡Ya has alcanzado el límite máximo de 6 frases favoritas!');
-            return;
+          showSweetAlert('You have now reached the maximum limit of 6 favorite phrases!', 'info');
+          return;
         }
-    
         favoritePhrases.push(fraseActual);
         localStorage.setItem('favoritePhrases', JSON.stringify(favoritePhrases));
-    
         const event = new Event('favoritePhrasesUpdated');
         document.dispatchEvent(event);
-    
-        alert('Frase agregada a favoritos:', fraseActual);
+        showSweetAlert('phrase added to favorites.', 'success');
     });
-    
+    function showSweetAlert(message, iconType) {
+        let icon;
+        // Selecciona el icono según el tipo proporcionado
+        if (iconType === 'success') {
+            icon = 'success';
+        } else {
+            icon = 'info';
+        }
+        Swal.fire({
+            title: message,
+            icon: icon,
+            // imageUrl: './assets/img/bohologo.png',
+            confirmButtonText: 'Cerrar',
+            imageWidth: 130, // Ancho de la imagen en píxeles
+            imageHeight: 80, // Altura de la imagen en píxeles
+            customClass: {
+                title: 'custom-title-class' // Clase personalizada para el título
+            }
+        });
+    }
+    function showSweetAlert(message, iconType) {
+        let icon;
+        // Selecciona el icono según el tipo proporcionado
+        if (iconType === 'success') {
+            icon = 'success';
+        } else {
+            icon = 'info';
+        }
+        Swal.fire({
+            text: message,
+            icon: icon,
+            confirmButtonText: 'Cerrar',
+            customClass: {
+            title: 'custom-title-class' // Clase personalizada para el título
+            }
+        });
+    }
     
   
 
