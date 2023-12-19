@@ -154,12 +154,9 @@
         background-color: var(--background-page-button);
     }
 }
-<<<<<<< HEAD
 
 @media (max-width: 896px) {
     body{
         background-color: var(--background-page-button);
     }
 }
-=======
->>>>>>> dca80c66d1d03013e6e93fab565cebbc9909cbc2
