@@ -27,9 +27,11 @@
     align-items: center;
 }*/
 
-#contentSection{display: flex;
+#contentSection{
+    display: flex;
     flex-direction: column;
     background-color: var(--background-page-button);
+    height: 42em;
 }
 
 #buttons-favorites {
@@ -48,6 +50,7 @@
     font-size: 1.3rem;
     padding: 1%;
     width: 40%;
+    cursor: pointer;
 }
 
 .Favorite {
@@ -103,6 +106,7 @@
     outline: none;
     background-color: initial;
     font-size: 0.6rem;
+    cursor: pointer;
 }
 
 /******************** versión Desktop******************************/
@@ -152,6 +156,14 @@
     }
     #buttons-favorites .Home{
         background-color: var(--background-page-button);
-        font-size: 2rem;
+        border-color: var(--bluetext) solid;
+        padding: 0.3em 0.3em 0.4em;
+        border-radius: 8px;
+        border: 3px solid #172C66;
+        font-family: jockey one;
+        font-size: 33px;
+        width: 10em;
+        height: 78px;
+        cursor: pointer;
     }
 }
