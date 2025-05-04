@@ -2,15 +2,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@500&family=Inter:wght@400;700&family=Jockey+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@500&family=Inter&family=Jockey+One&display=swap');
 :root {
-    --pink-button: #F582AE;
+    --pink-button: #FF3D7F;
     --bluetext: #172C66;
-    --background-title: #88D3DD;
+    --background-title: #00E5E8;
     --background-page-button: #FEF6E4;
     --fill-grey-cards: #d3d9f3;
-    --first-card-color: #B8C1EC;
+    --first-card-color: #D9BEFF;
     --second-color: #ffffff;
     --font-title: 'jockey-one', sans-serif;
     --font-content: 'inter', sans-serif;
+    --neobrutal-shadow: 5px 5px 0px #000000;
+    --neobrutal-border: 3px solid #000000;
   }
 
   * {
@@ -21,15 +23,12 @@
 #titleButtonFavorites img {
     display: none;
 }
-/*body{
+
+#contentSection{
     display: flex;
     flex-direction: column;
-    align-items: center;
-}*/
-
-#contentSection{display: flex;
-    flex-direction: column;
     background-color: var(--background-page-button);
+    height: 42em;
 }
 
 #buttons-favorites {
@@ -39,15 +38,18 @@
 }
 
 #buttons-favorites .Home {
-    background-color: #B8C1EC; /* Ajusta el color de fondo según tus preferencias */
-    border-color: #172C66 solid; /* Ajusta el color del borde según tus preferencias */
+    background-color: var(--first-card-color); /* Ajusta el color de fondo según tus preferencias */
     color: var(--bluetext);
-    border-radius: 8px;
-    border: 3px solid #172C66;
+    border-radius: 0px;
+    border: var(--neobrutal-border);
     font-family: 'jockey one', sans-serif; /* Ajusta la fuente según tus preferencias */
     font-size: 1.3rem;
+    font-weight: bold;
     padding: 1%;
     width: 40%;
+    cursor: pointer;
+    box-shadow: var(--neobrutal-shadow);
+    transform: rotate(-1deg);
 }
 
 .Favorite {
@@ -59,7 +61,7 @@
 }
 #cards-Favorites{
     display: grid;
-    gap: 40px 0;
+    gap: 40px;
     grid-template-columns: repeat(1, 1fr);
     place-items: center;
 }
@@ -71,12 +73,14 @@
     width: 55%;
     min-height: 175px;
     padding: 30px;
-    border: #172C66 solid;
-    border-radius: 20px;
+    border: var(--neobrutal-border);
+    border-radius: 0px;
+    box-shadow: var(--neobrutal-shadow);
+    transform: rotate(-1deg);
 }
 .card-generated span{
     color: var(--bluetext);
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     font-family: var(--font-content);
     font-weight: 500;
 }
@@ -103,9 +107,10 @@
     outline: none;
     background-color: initial;
     font-size: 0.6rem;
+    cursor: pointer;
 }
 
-/******************** versión Desktop******************************/
+/* versión Desktop*/
 
 @media (min-width:1024px) {
     #contentSection{
@@ -121,20 +126,18 @@
       box-sizing: border-box;
       align-items: center;
 }
-.Favorite{
-    font-size: 3rem;
-}
     #cards-Favorites{
         width: 60%;
         padding: 40px 0;
         display: grid;
         grid-template-columns: repeat(3, 1fr);
+        background-color: var(--background-page-button);
     }
     .card-generated{
         padding: 30px;
     }
     .card-generated span{
-        font-size: 1rem;
+        font-size: 0.8rem;
         font-weight: 500;
     }
     .card-generated button{
@@ -152,6 +155,20 @@
     }
     #buttons-favorites .Home{
         background-color: var(--background-page-button);
-        font-size: 2rem;
+        border-color: var(--bluetext) solid;
+        padding: 0.3em 0.3em 0.4em;
+        border-radius: 8px;
+        border: 3px solid #172C66;
+        font-family: jockey one;
+        font-size: 33px;
+        width: 10em;
+        height: 78px;
+        cursor: pointer;
+    }
+}
+
+@media (max-width: 896px) {
+    body{
+        background-color: var(--background-page-button);
     }
 }

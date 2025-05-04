@@ -2,15 +2,17 @@
 
 /* Estilos base que se aplicarán en todos los tamaños de pantalla */
 :root {
-  --pink-button: #F582AE;
+  --pink-button: #FF3D7F;
   --bluetext: #001858;
-  --background-title: #88D3DD;
+  --background-title: #00E5E8;
   --background-page-button: #FEF6E4;
   --fill-grey-cards: #d3d9f3;
-  --first-card-color: #B8C1EC;
+  --first-card-color: #D9BEFF;
   --second-color: #ffffff;
   --font-title: 'jockey-one', sans-serif;
   --font-content: 'inter', sans-serif;
+  --neobrutal-shadow: 5px 5px 0px #000000;
+  --neobrutal-border: 3px solid #000000;
 }
 
 * {
@@ -27,6 +29,9 @@
     text-align: center;
     font-family: Jockey One;
     font-size: 50px;
+    font-weight: bold;
+    transform: rotate(1deg);
+    margin: 10px;
   }
 
   .container {
@@ -36,6 +41,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    border-bottom: var(--neobrutal-border);
   }
 
   .content {
@@ -48,7 +54,6 @@
 
   #section-logo {
     grid-row: 1 / 2;
-    background-color: var(--first-card-color);
     width: 100%;
     height: 376px;
     display: flex;
@@ -87,32 +92,46 @@
   }
 
   .card-container {
-
     width: 17em;
     height: 452px;
-    border-radius: 45px;
+    border-radius: 0px;
     background-color: var(--fill-grey-cards);
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border: var(--neobrutal-border);
+    box-shadow: var(--neobrutal-shadow);
     transition: 0.3s;
   }
 
+  /* Animaciones para las tarjetas */
+  @keyframes cardEntrance {
+    from {
+      opacity: 0;
+      transform: rotate(-5deg) translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: rotate(-5deg) translateY(0);
+    }
+  }
+  
   .quote-container {
     /* Modifica los estilos para la cita en dispositivos móviles */
     background-color: var(--first-card-color);
-    border: 1px solid #ddd;
+    border: var(--neobrutal-border);
     margin-bottom: 20px;
     transition: transform 0.6s;
     height: 23em;
     width: 12em;
-    border-radius: 45px;
+    border-radius: 0px;
     overflow: hidden;
     display: flex;
     flex-direction: column;
     align-items: center;
     /* Centrar verticalmente */
     justify-content: space-between;
-    transform: rotate(-13.731deg);
+    transform: rotate(-5deg);
     padding: 2em;
+    box-shadow: var(--neobrutal-shadow);
+    animation: cardEntrance 0.8s ease-out;
   }
 
   .quote-content {
@@ -148,27 +167,97 @@
 
   .next-button {
     background-color: var(--pink-button);
-    border-color: var(--bluetext) solid;
     padding: 0.3em 0.3em 0.4em 0.3em;
-    border-radius: 8px;
-    border: 3px solid #172C66;
+    border-radius: 0px;
+    border: var(--neobrutal-border);
     font-family: jockey one;
     font-size: 33px;
+    font-weight: bold;
     width: 6em;
     height: 2em;
     cursor: pointer;
+    color: var(--bluetext);
+    box-shadow: var(--neobrutal-shadow);
+    transform: rotate(1deg);
   }
 
   .favorites-button {
     background-color: var(--first-card-color);
-    border-color: var(--bluetext) solid;
     padding: 0.3em 0.3em 0.4em;
-    border-radius: 8px;
-    border: 3px solid #172C66;
+    border-radius: 0px;
+    border: var(--neobrutal-border);
     font-family: jockey one;
     font-size: 33px;
+    font-weight: bold;
     width: 6em;
     height: 2em;
     cursor: pointer;
+    color: var(--bluetext);
+    box-shadow: var(--neobrutal-shadow);
+    transform: rotate(-1deg);
   }
+}
+
+/* Animación para los botones */
+.next-button, .favorites-button {
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.next-button:hover, .favorites-button:hover {
+  transform: translateY(-5px) rotate(1deg);
+}
+
+/* Animación para el icono de corazón */
+@keyframes heartbeat {
+  0% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(1.1);
+  }
+  50% {
+    transform: scale(1);
+  }
+  75% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.fa-heart:hover:before {
+  animation: heartbeat 1s infinite;
+}
+
+
+/* Animación para el cambio de frases */
+@keyframes fadeInOut {
+  0% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  20% {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  80% {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.quote-content.changing {
+  animation: fadeInOut 0.8s ease-in-out;
+}
+
+/* Animación para los botones al hacer clic */
+.next-button:active, .favorites-button:active {
+  transform: translateY(3px) rotate(0deg);
+  box-shadow: 2px 2px 0px #000000;
+  transition: transform 0.1s, box-shadow 0.1s;
 }
