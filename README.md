@@ -1,85 +1,3 @@
-## Curious Facts Project
-> [!NOTE]  
-> 🌐 Description:
-> 
-> Curious Facts is a web application that provides fascinating data obtained from an API. It offers an interactive experience where users  
-  can explore, save, and delete curiosities easily.
-
-## 👩‍💻 Technologies Used:
-- JavaScript
-- HTML
-- CSS
-- Vite
-- Vitest
-
-## 📁 File Structure:
-
-- Index.html: Represents our single page (Single-page Application)
-- css/: Folder containing project's CSS styles.
-- js/: Folder containing JavaScript scripts that will manipulate the 
-  interactive content of our html page through DOM manipulation.
-- assets/: Folder storing multimedia resources such as images or icons.
-- test/: Folder containing the file responsible for testing our project.
-
-## 📚 Features:
-
-- 🔄 Random Query: Get random curious data by clicking "Get Curiosity."
-- ⭐ Favorites Save: Mark your favorite curiosities with a simple click on the 
-star.
-- 🗑️ Intuitive Deletion: Easily delete curiosities from the list using the delete icon.
-
->[!IMPORTANT]
-> ## 🛠 Installation Instructions:
-
-Clone this repository into the desired folder using the git clone command:
-https://github.com/tephyxp/curious-facts-project.git
-
-To run tests with Vitest, follow these steps:
-
-1. Open a terminal and navigate to the project folder.
-2. Run the following command to install necessary dependencies:
-  ```
-  npm install
-  ```
-3. Once the dependencies are installed, you can run the tests using the command:
-  ```
-  npm test
-  ```
-## 📝 Usage Instructions:
-1. Open index.html in your web browser.
-2. Explore curious data by clicking "Get Curiosity."
-3. Mark your favorites with the star icon.
-4. Delete curiosities using the delete icon.
-
-## Page Demo
-![Index.html](./assets/img/demo-pagina.png) 
-
-## 👩‍💻 Developers:
-
-Alicia Ontiveros - [Linkedin profile](https://www.linkedin.com/in/alicia-ontiveros-escudero)
-
-Stefania Georgescu - [Linkedin profile](http://www.linkedin.com/in/stefania-georgescu-602700112)
-
-Grecia Landazuri - [Linkedin profile](https://www.linkedin.com/in/grecialh/)
-
-Stephanie Céspedes - [Linkedin profile](https://www.linkedin.com/in/stephanie-cespedes)
-
-
->[!TIP]
->## 🚀 Development and Contributions
-
-🎖 Contribute to the development of this application by following these steps!
-
-Fork the repository.
-Clone your forked repository locally.
-Create a new branch: git checkout -b branch-name.
-Make changes and commit descriptive messages.
-Push the branch to your forked repository: git push origin branch-name.
-Open a pull request in the original repository.
-Thank you for your contribution!
-
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
 ## Proyecto de Hechos curiosos
 
 > [!NOTE]
@@ -135,7 +53,8 @@ Thank you for your contribution!
 
 ## Demo de la página 
 
-![Index.html](./assets/img/demo-pagina.png)
+![Index.html](./assets/img/home.png)
+![Index.html](./assets/img/fav_page.png)
 
 ## 👩‍💻 Desarrolladoras:
 
