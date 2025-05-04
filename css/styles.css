@@ -3,16 +3,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@500&family=Inter&family=Jockey+One&display=swap');
 @import url(./home.css);
 
-:root {
-    --pink-button: #F582AE;
+mejoras:root {
+    --pink-button: #FF3D7F;
     --bluetext: #001858;
-    --background-title: #88D3DD;
+    --background-title: #00E5E8;
     --background-page-button: #FEF6E4;
     --fill-grey-cards: #d3d9f3;
-    --first-card-color: #B8C1EC;
+    --first-card-color: #D9BEFF;
     --second-color: #ffffff;
     --font-title: 'jockey-one', sans-serif;
     --font-content: 'inter', sans-serif;
+    --neobrutal-shadow: 5px 5px 0px #000000;
+    --neobrutal-border: 3px solid #000000;
 }
 
 * {
@@ -29,19 +31,20 @@
         text-align: center;
         font-family: Jockey One;
         font-size: 50px;
-        background-color: var(--background-title);
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        font-weight: bold;
+        transform: rotate(1deg);
+        margin: 10px;
     }
 
     .favorites-button {
         background-color: var(--background-page-button);
-        border-color: var(--bluetext) solid;
         padding: 0.3em 0.3em 0.4em;
-        border-radius: 8px;
-        border: 3px solid #172C66;
+        border-radius: 0px;
+        border: var(--neobrutal-border);
+        box-shadow: var(--neobrutal-shadow);
+        transform: rotate(-1deg);
         font-family: jockey one;
+        font-weight: bold;
         font-size: 33px;
         width: 10em;
         height: 78px;
@@ -51,16 +54,18 @@
 
     .next-button {
         background-color: var(--pink-button);
-        border-color: var(--bluetext) solid;
         padding: 0.3em 0.3em 0.4em;
-        border-radius: 8px;
-        border: 3px solid #172C66;
+        border-radius: 0px;
+        border: var(--neobrutal-border);
         font-family: jockey one;
         font-size: 33px;
+        font-weight: bold;
         width: 10em;
         height: 78px;
         cursor: pointer;
-        color:var(--bluetext)
+        color: var(--bluetext);
+        box-shadow: var(--neobrutal-shadow);
+        transform: rotate(1deg);
     }
 
     .container {
@@ -70,6 +75,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        border-bottom: var(--neobrutal-border);
     }
 
     #content {
@@ -124,23 +130,27 @@
         flex-direction: row;
         align-items: center;
         justify-content: center;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        box-shadow: var(--neobrutal-shadow);
         width: 22.588em;
         margin: 0 auto;
         height: 35em;
-        border-radius: 45px;
+        border-radius: 0px;
         background-color: var(--fill-grey-cards);
+        border: var(--neobrutal-border);
     }
 
     /* Estilos para las tarjetas de frases */
     .quote-container {
         background-color: var(--first-card-color);
-        border: 1px solid #ddd;
+        border: var(--neobrutal-border);
         margin-bottom: 20px;
         transition: transform 0.6s;
         height: 32em;
+        border-radius: 0px;
+        box-shadow: var(--neobrutal-shadow);
+        transform: rotate(-2deg);
         width: 300px;
-        border-radius: 45px;
+        border-radius: 0px;
         overflow: hidden;
         display: flex;
         flex-direction: column;
@@ -182,4 +192,62 @@
         flex-direction: column;
         justify-content: flex-end;
     }
+}
+
+
+/* Animación para la transición entre páginas */
+@keyframes pageTransition {
+  0% {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.content {
+  animation: pageTransition 0.5s ease-out;
+}
+
+
+/* Animación para el icono de corazón */
+.fa-heart {
+    transition: transform 0.3s ease;
+}
+
+.fa-heart:hover {
+    animation: heartbeat 1s infinite;
+}
+
+@keyframes heartbeat {
+    0% { transform: scale(1); }
+    25% { transform: scale(1.1); }
+    50% { transform: scale(1); }
+    75% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+
+/* Animación para la tarjeta */
+.quote-container {
+    transition: transform 0.6s;
+}
+
+.quote-container:hover {
+    transform: translateY(-10px) rotate(-13.731deg);
+    box-shadow: 8px 8px 0px #000000;
+}
+
+/* Animación para el cambio de frases */
+@keyframes fadeInOut {
+    0% { opacity: 1; transform: translateX(0); }
+    20% { opacity: 0; transform: translateX(-20px); }
+    80% { opacity: 0; transform: translateX(20px); }
+    100% { opacity: 1; transform: translateX(0); }
+}
+
+.quote-content.changing {
+    animation: fadeInOut 0.8s ease-in-out;
 }
